@@ -1,0 +1,45 @@
+﻿<Page
+    x:Class="Studyio.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Studyio"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    DataContext="{Binding TopicsPage, Source={StaticResource ViewModelLocator}}">
+
+    <Page.BottomAppBar>
+        <CommandBar>
+            <AppBarButton Icon="Add" Label="Add Topic" Click="AppBarButton_Click" />
+        </CommandBar>
+    </Page.BottomAppBar>
+
+    
+    <Frame Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Pivot Title="Studyio">
+            <PivotItem Header="To do">
+                <ListView ItemsSource="{Binding Topics}" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding Title}" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </PivotItem>
+            <PivotItem Header="Done">
+                <ListView ItemsSource="{Binding DoneTopics}" >
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding Title}" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </PivotItem>
+        </Pivot>
+    </Frame>
+</Page>
