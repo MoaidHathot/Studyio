@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Studyio.Shared.Contracts
 {
-    public interface ITopicsService
+    public interface ITopicsService : IDisposable
     {
         Task<IEnumerable<Topic>> GetALLTopicsAsync();
         Task<Topic> AddTopicAsync(Topic topic);

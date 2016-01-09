@@ -13,7 +13,6 @@ namespace Studyio
     {
         public bool Set<T>(T value, ref T field, [CallerMemberName] string propertyName = "")
         {
-            Debug.WriteLine($"Set of {propertyName}");
             return Set(propertyName, ref field, value);
         }
     }

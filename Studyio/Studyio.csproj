@@ -144,6 +144,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <ProjectReference Include="..\Studyio.DataAccess\Studyio.DataAccess.csproj">
+      <Project>{dc6bca21-d1b6-444c-b9a8-19ec1568b5d2}</Project>
+      <Name>Studyio.DataAccess</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Studyio.Shared\Studyio.Shared.csproj">
       <Project>{21c12f8f-1cfc-43a0-b0fb-5a9c3a7db285}</Project>
       <Name>Studyio.Shared</Name>

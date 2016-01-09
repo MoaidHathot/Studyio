@@ -10,7 +10,7 @@
 
     <Page.BottomAppBar>
         <CommandBar>
-            <AppBarButton x:Name="saveAppBarButton" Icon="Accept" Label="Save" Command="{Binding AcceptCommand}"/>
+            <AppBarButton x:Name="saveAppBarButton" Icon="Accept" Label="Save" Command="{Binding AcceptCommand}" Click="AppBarButton_Click_Accept" />
             <AppBarButton x:Name="cancelAppBarButton" Icon="Cancel" Label="Cancel" Click="AppBarButton_Click_Cancel" />
         </CommandBar>
     </Page.BottomAppBar>

@@ -8,16 +8,19 @@ namespace Studyio
 {
     public class ViewModelLocator
     {
+        private Lazy<AddTopicViewModel> AddTopicViewModel = new Lazy<AddTopicViewModel>(() => new AddTopicViewModel());
+        private Lazy<TopicsViewModel> TopicsViewModel = new Lazy<TopicsViewModel>(() => new TopicsViewModel());
+
         public ITopicsViewModel TopicsPage
         {
-            get { return new TopicsViewModel(); }
+            get { return TopicsViewModel.Value; }
         }
 
         public IAddTopicViewModel AddTopicPage
         {
             get
             {
-                return new AddTopicViewModel();
+                return AddTopicViewModel.Value;
             }
         }
     }

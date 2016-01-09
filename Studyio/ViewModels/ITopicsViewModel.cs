@@ -11,6 +11,8 @@ namespace Studyio
     public interface ITopicsViewModel
     {
         ObservableCollection<Topic> Topics { get; set; }
-        ObservableCollection<Topic> ClosedTopics { get; set; }
+        ObservableCollection<Topic> DoneTopics { get; set; }
+
+        Task ReloadTopicsAsync();
     }
 }

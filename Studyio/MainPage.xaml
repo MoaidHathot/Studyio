@@ -17,7 +17,7 @@
     
     <Frame Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Pivot Title="Studyio">
-            <PivotItem Header="To do">
+            <PivotItem Header="Todo">
                 <ListView ItemsSource="{Binding Topics}" >
                     <ListView.ItemTemplate>
                         <DataTemplate>

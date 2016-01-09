@@ -23,9 +23,23 @@ namespace Studyio
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        private ITopicsViewModel CurrentTopicsViewModel { get { return DataContext as ITopicsViewModel; } }
+
+        private static bool _loadedTopics;
+
         public MainPage()
         {
             this.InitializeComponent();
+            this.Loaded += MainPage_Loaded;
+        }
+
+        private void MainPage_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (!_loadedTopics)
+            {
+                CurrentTopicsViewModel.ReloadTopicsAsync();
+                _loadedTopics = true;
+            }
         }
 
         private void HamburgerButton_Click(object sender, RoutedEventArgs e)

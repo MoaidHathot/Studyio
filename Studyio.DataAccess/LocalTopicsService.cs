@@ -10,24 +10,43 @@ namespace Studyio.DataAccess
 {
     public class LocalTopicsService : ITopicsService
     {
-        public Task<Topic> AddTopicAsync(Topic topic)
-        {
-            throw new NotImplementedException();
-        }
-
         public Task<IEnumerable<Topic>> GetALLTopicsAsync()
         {
-            throw new NotImplementedException();
+            return Task.Run(() => (IEnumerable<Topic>)new[] {
+
+                new Topic(Guid.NewGuid().ToString(), "Actor Model", "", 1, new DateTime(2016, 03, 01)),
+                new Topic(Guid.NewGuid().ToString(), "Dependency Injection book", ""),
+                new Topic(Guid.NewGuid().ToString(), "F#", "", 3),
+                new Topic(Guid.NewGuid().ToString(), "TPL Data Flows", "")
+            });
+        }
+
+        public Task<Topic> AddTopicAsync(Topic topic)
+        {
+            return Task.Run(() => topic);
         }
 
         public Task<Topic> RemoveTopicAsync(Topic topic)
         {
-            throw new NotImplementedException();
+            return Task.Run(() => topic);
         }
 
         public Task<Topic> UpdateTopicAsync(Topic topic)
         {
-            throw new NotImplementedException();
+            return Task.Run(() => topic);
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+
+            }
         }
     }
 }

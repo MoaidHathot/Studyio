@@ -108,6 +108,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contracts\ITopicsService.cs" />
+    <Compile Include="Messages\TopicAddedMessage.cs" />
+    <Compile Include="Messages\TopicMessage.cs" />
+    <Compile Include="Messages\TopicUpdatedMessage.cs" />
     <Compile Include="Metadata\Topic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Studyio.Shared.rd.xml" />

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Studyio.Shared;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,5 +17,9 @@ namespace Studyio
         ICommand AcceptCommand { get; }
 
         void EvaluateSaveTopicCommand();
+
+        bool IsEditMode { get; }
+
+        Topic CurrentTopic { get; set; }
     }
 }

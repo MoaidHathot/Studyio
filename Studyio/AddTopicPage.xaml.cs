@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Studyio.Shared;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -27,16 +28,30 @@ namespace Studyio
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
+
+            var topic = e.Parameter as Topic;
+
+            if (null != topic)
+            {
+                AddTopicDataContext.CurrentTopic = topic;
+            }
         }
 
         public AddTopicPage()
         {
             this.InitializeComponent();
+
+            this.Loaded += AddTopicPage_Loaded;
+        }
+
+        private void AddTopicPage_Loaded(object sender, RoutedEventArgs e)
+        {
+            
         }
 
         private void AppBarButton_Click_Accept(object sender, RoutedEventArgs e)
         {
-            
+            Frame.GoBack();
         }
 
         private void AppBarButton_Click_Cancel(object sender, RoutedEventArgs e)

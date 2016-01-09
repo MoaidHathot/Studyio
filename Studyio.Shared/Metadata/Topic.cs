@@ -13,15 +13,20 @@ namespace Studyio.Shared
         private string _title;
         private int _priority;
         private DateTime? _dueDate;
+        private bool _isDone;
 
         private string _description;
 
+        private string _key;
+
+        public string Key { get { return _key; } set { Set(() => _key, ref _key, value); } }
         public string Title { get { return _title; } set { Set(() => _title, ref _title, value); } }
         public string Description { get { return _description; } set { Set(() => _description, ref _description, value); } }
         public int Priority { get { return _priority; } set { Set(() => _priority, ref _priority, value); } }
         public DateTime? DueDate { get { return _dueDate; } set { Set(() => _dueDate, ref _dueDate, value); } }
+        public bool IsDone { get { return _isDone; } set { Set(() => _isDone, ref _isDone, value); } }
 
-        public string Key { get; set; }
+        //public string Key { get; set; }
 
         public Topic(string key, string title, string description, int priority = 1, DateTime? dueDate = null)
         {
